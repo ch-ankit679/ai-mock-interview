@@ -7,7 +7,9 @@ import CodeEditor from "@/app/components/CodeEditor";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
+interface SpeechRecognitionEvent extends Event {
+  results: SpeechRecognitionResultList;
+}
 export default function InterviewPage({ params }: { params: { interviewId: string } }) {
   const router = useRouter();
   const [isListening, setIsListening] = useState(false);

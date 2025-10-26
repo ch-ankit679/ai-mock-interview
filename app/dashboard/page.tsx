@@ -3,7 +3,11 @@
 import Header from "../components/Header";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
-import InterviewSetupDialog from "../components/InterviewSetupDialog";
+import dynamic from "next/dynamic";
+const InterviewSetupDialog = dynamic(
+  () => import("../components/InterviewSetupDialog"),
+  {ssr : false}
+);
 
 export default function Dashboard() {
   return (
